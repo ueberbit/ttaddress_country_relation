@@ -1,7 +1,9 @@
 <?php
 
 declare(strict_types=1);
-defined('TYPO3_MODE') || die('Access denied.');
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+defined('TYPO3') || die('Access denied.');
 
 call_user_func(
     function ($extKey): void {
@@ -14,7 +16,6 @@ call_user_func(
                     'minitems' => 0,
                     'maxitems' => 1,
                     'type' => 'group',
-                    'internal_type' => 'db',
                     'allowed' => 'static_countries',
                     'foreign_table' => 'static_countries',
                     'suggestOptions' => [
@@ -41,7 +42,6 @@ call_user_func(
                     'minitems' => 0,
                     'maxitems' => 1,
                     'type' => 'group',
-                    'internal_type' => 'db',
                     'allowed' => 'static_country_zones',
                     'foreign_table' => 'static_country_zones',
                     'suggestOptions' => [
@@ -62,8 +62,8 @@ call_user_func(
             ],
         ];
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $fields);
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_address', 'country_relation, region_relation', '', 'after:region');
+        ExtensionManagementUtility::addTCAcolumns('tt_address', $fields);
+        ExtensionManagementUtility::addToAllTCAtypes('tt_address', 'country_relation, region_relation', '', 'after:region');
     },
     'ttaddress_country_relation'
 );

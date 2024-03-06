@@ -18,8 +18,8 @@
   "license": "GPL-2.0-or-later",
   "require": {
     "typo3/cms-core": "^11.0",
-    "php": ">=7.4",
-    "friendsoftypo3/tt-address": "^5.3 || ^6|| ^7",
+    "php": ">=8.1",
+    "friendsoftypo3/tt-address": "^6|| ^7 || ^8",
     "evoweb/extender": "^8.1",
     "sjbr/static-info-tables": "^11.5"
   },
