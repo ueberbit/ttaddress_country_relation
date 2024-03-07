@@ -4,49 +4,47 @@ declare(strict_types=1);
 
 namespace StudioMitte\TtaddressCountryRelation\Extending\Domain\Model;
 
-use SJBR\StaticInfoTables\Domain\Model\Country;
-use SJBR\StaticInfoTables\Domain\Model\CountryZone;
 class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address
 {
 
     /**
-     * @var Country
+     * @var \SJBR\StaticInfoTables\Domain\Model\Country
      */
     protected $countryRelation;
 
     /**
-     * @var CountryZone
+     * @var \SJBR\StaticInfoTables\Domain\Model\CountryZone
      */
     protected $regionRelation;
 
     /**
-     * @return Country
+     * @return \SJBR\StaticInfoTables\Domain\Model\Country
      */
-    public function getCountryRelation(): ?Country
+    public function getCountryRelation(): ?\SJBR\StaticInfoTables\Domain\Model\Country
     {
         return $this->countryRelation;
     }
 
     /**
-     * @param Country $countryRelation
+     * @param \SJBR\StaticInfoTables\Domain\Model\Country $countryRelation
      */
-    public function setCountryRelation(Country $countryRelation): void
+    public function setCountryRelation(\SJBR\StaticInfoTables\Domain\Model\Country $countryRelation): void
     {
         $this->countryRelation = $countryRelation;
     }
 
     /**
-     * @return CountryZone
+     * @return \SJBR\StaticInfoTables\Domain\Model\CountryZone
      */
-    public function getRegionRelation(): ?CountryZone
+    public function getRegionRelation(): ?\SJBR\StaticInfoTables\Domain\Model\CountryZone
     {
         return $this->regionRelation;
     }
 
     /**
-     * @param CountryZone $regionRelation
+     * @param \SJBR\StaticInfoTables\Domain\Model\CountryZone $regionRelation
      */
-    public function setRegionRelation(CountryZone $regionRelation): void
+    public function setRegionRelation(\SJBR\StaticInfoTables\Domain\Model\CountryZone $regionRelation): void
     {
         $this->regionRelation = $regionRelation;
     }
