@@ -1,8 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined('TYPO3') || die('Access denied.');
 
 call_user_func(
@@ -62,8 +60,8 @@ call_user_func(
             ],
         ];
 
-        ExtensionManagementUtility::addTCAcolumns('tt_address', $fields);
-        ExtensionManagementUtility::addToAllTCAtypes('tt_address', 'country_relation, region_relation', '', 'after:region');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $fields);
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_address', 'country_relation, region_relation', '', 'after:region');
     },
     'ttaddress_country_relation'
 );
